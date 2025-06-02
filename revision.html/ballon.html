@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Balloon Pop</title>
+  <style>
+    .balloon {
+      width: 100px;
+      height: 130px;
+      background: red;
+      border-radius: 50% 50% 50% 50%;
+      position: relative;
+      margin: 50px auto;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 20px;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">🎈 Click to Pop the Balloon!</h2>
+  <div class="balloon" onclick="pop(this)"></div>
+
+  <script>
+    function pop(balloon) {
+      balloon.style.transform = "scale(0)";
+      setTimeout(() => {
+        balloon.style.backgroundColor = getRandomColor();
+        balloon.style.transform = "scale(1)";
+      }, 800);
+    }
+
+    function getRandomColor() {
+      const colors = ["red", "blue", "green", "purple", "pink", "orange"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+</body>
+</html>

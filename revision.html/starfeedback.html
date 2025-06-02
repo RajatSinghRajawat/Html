@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Star Rating</title>
+  <style>
+    .stars {
+      display: flex;
+      justify-content: center;
+      font-size: 50px;
+      cursor: pointer;
+      color: gray;
+    }
+    .stars span:hover,
+    .stars span:hover ~ span {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">🌟 Rate Your Day!</h2>
+  <div class="stars" onclick="rateStar(event)">
+    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+  </div>
+  <p id="message" style="text-align:center; font-size:18px; margin-top:20px;"></p>
+
+  <script>
+    function rateStar(e) {
+      const index = Array.from(e.currentTarget.children).indexOf(e.target) + 1;
+      document.getElementById("message").innerText = `You rated: ${index} star${index > 1 ? 's' : ''}! ✨`;
+    }
+  </script>
+</body>
+</html>

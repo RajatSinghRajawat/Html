@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Talking Cat</title>
+  <style>
+    body {
+      text-align: center;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      font-family: 'Comic Sans MS', cursive;
+    }
+    #cat {
+      font-size: 120px;
+      margin-top: 100px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    #cat:hover {
+      transform: scale(1.2);
+    }
+    h2 {
+      font-size: 30px;
+      margin-top: 30px;
+    }
+    #text {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🐾 Click the lion to Hear Roar!</h2>
+  <div id="cat" onclick="meow()">🦁</div>
+  <p id="text">I'm waiting for your click...</p>
+
+  <!-- Use a reliable meow sound (uploaded on GitHub for public access) -->
+  <audio id="sound" src="lion-roar-6011.mp3"></audio>
+
+
+  <script>
+    function meow() {
+      const cat = document.getElementById("cat");
+      const text = document.getElementById("text");
+      const sound = document.getElementById("sound");
+
+      // Play sound
+      sound.currentTime = 0; // Reset to start
+      sound.play();
+
+      // Animation and text change
+      cat.innerText = "🦁";
+      text.innerText = "lion! 🐾";
+
+      setTimeout(() => {
+        cat.innerText = "🦁";
+        text.innerText = "Click me again!";
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>

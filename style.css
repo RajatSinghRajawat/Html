@@ -1,0 +1,14 @@
+.img-responsive{
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+.villa{
+    display: flex;
+    justify-content: space-between;
+}
+.luxury{
+border: 1px solid ;
+padding: 10px ;
+font-size: ;
+}

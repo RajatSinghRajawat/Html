@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emoji Clicker</title>
+  <style>
+    #emoji {
+      font-size: 80px;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">😄 Emoji Clicker!</h2>
+  <div style="text-align:center;">
+    <div id="emoji">😊</div>
+    <button onclick="newEmoji()">Click Me!</button>
+  </div>
+
+  <script>
+    function newEmoji() {
+      const emojis = ["😄", "😎", "😍", "🤖", "🐱", "🦄", "🎃", "👻"];
+      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      document.getElementById("emoji").innerText = randomEmoji;
+    }
+  </script>
+</body>
+</html>

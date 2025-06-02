@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Greeting Card</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #e0f7fa;
+      font-family: sans-serif;
+    }
+    .card {
+      width: 300px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: #ffccff;
+      border: 2px solid #cc99cc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+      transition: transform 0.6s;
+      cursor: pointer;
+    }
+    .card.open {
+      background-color: #ccffcc;
+      transform: rotateY(360deg);
+    }
+    .message {
+      font-size: 20px;
+      display: none;
+    }
+    .card.open .message {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎉 Click the Card to Open 🎶</h2>
+
+  <div class="card" onclick="openCard(this)">
+    <div class="message">🎊 Happy Coding! 🎊</div>
+  </div>
+
+  <!-- Sound -->
+  <audio id="greetSound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+
+  <script>
+    function openCard(card) {
+      card.classList.toggle('open');
+      document.getElementById('greetSound').play();
+    }
+  </script>
+
+</body>
+</html>

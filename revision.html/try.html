@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Magic Color Box</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin: 100px auto;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">🎨 Click the Box!</h2>
+  <div id="box" onclick="changeColor()"></div>
+
+  <script>
+    function changeColor() {
+      const box = document.getElementById("box");
+      const colors = ["red", "green", "blue", "orange", "purple", "pink"];
+      const random = colors[Math.floor(Math.random() * colors.length)];
+      box.style.backgroundColor = random;
+    }
+  </script>
+</body>
+</html>
